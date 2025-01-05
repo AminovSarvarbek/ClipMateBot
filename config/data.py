@@ -1,7 +1,9 @@
-import os
-from dotenv import load_dotenv
+from environs import Env
 
-load_dotenv()
+env = Env()
+env.read_env()
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-DB_URL = os.getenv("DB_URL")
+
+BOT_TOKEN = env.str("BOT_TOKEN")
+DB_URL = env.str("DB_URL")
+CHANNELS = env.list("CHANNELS")

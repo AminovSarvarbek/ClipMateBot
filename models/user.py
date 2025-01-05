@@ -4,7 +4,7 @@ class User(models.Model):
     id = fields.IntField(pk=True)
     chat_id = fields.BigIntField()
     first_name = fields.CharField(max_length=255)
-    phone = fields.BigIntField()
+    phone = fields.BigIntField(null=True)
     is_admin = fields.BooleanField(default=False, null=True)
 
     class Meta:
